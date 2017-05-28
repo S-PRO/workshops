@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "user create",
+  "description": "create schema",
+  "type": "object",
+  "required": ["first_name", "last_name", "password", "email"],
+  "properties": {
+    "first_name": { "type": "string" },
+    "last_name": { "type": "string" },
+    "password": { "type": "string" },
+    "email": { "type": "string", "format": "email" }
+  }
+}

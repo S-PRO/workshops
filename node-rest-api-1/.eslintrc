@@ -1,0 +1,18 @@
+{
+  "extends": "airbnb-base",
+  "parser": "babel-eslint",
+  "plugins": [
+    "import"
+  ],
+  "rules": {
+    "no-param-reassign": ["error", { "props": false }],
+    "import/prefer-default-export": 0,
+    "space-before-function-paren": ["error", {
+      "anonymous": "ignore",
+      "named": "ignore",
+      "asyncArrow": "ignore"
+    }],
+    "object-shorthand": [0, "consistent"],
+    "no-warning-comments": 0
+  }
+}
