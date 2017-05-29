@@ -10,7 +10,6 @@ export default class LoginController {
     return db.user.findOne({ where: { id }, attributes: { exclude: ['password'] } });
   }
 
-  @validator(createSchema)
   static async create(ctx, next) {
     const { request: { body: { first_name, last_name, password, email } } } = ctx;
     const userData = {
@@ -39,7 +38,6 @@ export default class LoginController {
     await next();
   }
 
-  @validator(updateSchema)
   static async update(ctx, next) {
     const { params: { id }, request: { body: { first_name, last_name, email } } } = ctx;
     const user = await LoginController.getUser(id);
