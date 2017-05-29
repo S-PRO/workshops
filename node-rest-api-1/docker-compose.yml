@@ -1,0 +1,25 @@
+version: '2.1'
+
+services:
+  db:
+    image: mysql:latest
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: workshop
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+
+  workshop:
+    container_name: node-workshop
+    build: ./Dockerfile
+    hostname: node-workshop
+    depends_on:
+      - db
+
+volumes:
+  db_data:
