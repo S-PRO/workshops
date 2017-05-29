@@ -16,8 +16,12 @@ services:
 
   workshop:
     container_name: node-workshop
-    build: ./Dockerfile
+    build: ./
     hostname: node-workshop
+    volumes:
+      - ./app:/var/www/workshop/app
+    ports:
+      - "3000:3000"
     depends_on:
       - db
 

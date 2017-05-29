@@ -1,6 +1,5 @@
 import Boom from 'boom';
 
-import { createSchema, updateSchema } from './schemas';
 import { validator, PasswordService } from './../../utils';
 import db from './../../models';
 
