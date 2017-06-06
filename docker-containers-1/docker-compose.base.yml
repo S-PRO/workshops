@@ -1,0 +1,35 @@
+version: '3'
+services:
+  http-server:
+    image: nginx
+    ports:
+      - "80:80"
+    restart: always
+    volumes:
+      - ./http-server/nginx.config:/etc/nginx/conf.d/default.conf
+      - ./web-client/app/static:/srv/static
+
+  web-client:
+    build: ./web-client
+    volumes:
+      - ./web-client/app/source:/srv/app/source
+      - ./web-client/app/static:/srv/app/static
+      - ./web-client/app/webpack.config.js:/srv/app/webpack.config.js
+
+  app-server:
+    build: ./app-server
+    environment:
+      - LC_ALL=C.UTF-8
+      - LANG=C.UTF-8
+    restart: always
+    volumes:
+      - ./app-server/app:/srv/app
+
+  database:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=sandbox
+      - POSTGRES_USER=sandbox
+      - POSTGRES_DB=sandbox

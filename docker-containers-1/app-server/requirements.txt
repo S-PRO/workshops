@@ -1,0 +1,11 @@
+Flask==0.12
+gunicorn==19.7
+click==6.7
+decorator==4.0.6
+Flask==0.12
+ipython==2.4.1
+itsdangerous==0.24
+Jinja2==2.9.6
+MarkupSafe==1.0
+simplegeneric==0.8.1
+Werkzeug==0.12.2

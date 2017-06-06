@@ -1,0 +1,24 @@
+version: '3'
+services:
+  http-server:
+    container_name: dev-http-server
+
+  web-client:
+    command: yarn webpack --watch
+    container_name: dev-web-client
+    restart: always
+    volumes:
+      - ./web-client/app/yarn.lock:/srv/app/yarn.lock
+      - ./web-client/app/package.json:/srv/app/package.json
+    working_dir: /srv/app
+
+  app-server:
+    command: flask run --host=0.0.0.0 --port=5000
+    container_name: dev-app-server
+    environment:
+      - FLASK_APP=/srv/app/wsgi.py
+      - FLASK_DEBUG=1
+    working_dir: /srv/app
+
+  database:
+    container_name: dev-database

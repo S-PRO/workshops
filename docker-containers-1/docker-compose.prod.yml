@@ -1,0 +1,20 @@
+version: '3'
+services:
+  http-server:
+    container_name: prod-http-server
+
+  web-client:
+    container_name: prod-web-client
+    working_dir: /srv/app
+
+  app-server:
+    command: gunicorn wsgi:app --chdir /srv/app -b 0.0.0.0:5000
+    container_name: prod-app-server
+    environment:
+      - FLASK_DEBUG=0
+    working_dir: /srv/app
+
+  database:
+    container_name: prod-database
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
