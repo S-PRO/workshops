@@ -2,12 +2,12 @@
 
 ## Technologies used:
 
-- Koa v2
-- MySQL
-- JSON Schema
-- Yarn
-- ESLint
-- Docker
+- [Koa v2](http://koajs.com/)
+- [MySQL](https://www.mysql.com/)
+- [Sequelize](http://docs.sequelizejs.com/)
+- [JSON Schema](http://json-schema.org/)
+- [ESLint](http://eslint.org/)
+- [Docker](https://www.docker.com/)
 
 ## Getting started
 
