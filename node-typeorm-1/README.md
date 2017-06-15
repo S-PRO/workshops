@@ -9,4 +9,3 @@
 - [Docker](https://www.docker.com/)
 
 - [TypeORM](https://typeorm.github.io/)
-
