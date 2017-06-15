@@ -8,7 +8,7 @@ WORKDIR /var/www/typeorm-api
 
 ADD . /var/www/typeorm-api
 
-RUN yarn install
+RUN npm install
 
 EXPOSE 3000
 

@@ -1,25 +1,35 @@
 import {
   Entity,
   Column,
-  JoinColumn,
   PrimaryGeneratedColumn,
-  OneToMany,
+  OneToOne,
+  JoinColumn
 } from 'typeorm';
 
-@Entity()
-export class Album <Entity> {
+import { AlbumMeta } from "./AlbumMeta";
+import { AlbumValidator } from "../validation";
 
-  constructor(title: string) {
+@Entity()
+export class Album {
+
+  constructor(title: string, description: string) {
     this.title = title;
+    this.description = description;
     this.updated_at = new Date();
   }
 
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({length: 50})
   title: string;
 
   @Column()
+  description: string;
+
+  @Column()
   updated_at: Date;
+
+  @OneToOne(type => AlbumMeta, meta => meta.album)
+  meta: AlbumMeta;
 }

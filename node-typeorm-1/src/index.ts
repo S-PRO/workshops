@@ -8,7 +8,7 @@ import {
   Connection 
 } from "typeorm";
 
-import { Album } from './models';
+import { Album, AlbumMeta } from './models';
 
 import config from './config';
 import * as controllers from './controllers';
@@ -16,10 +16,10 @@ import { CustomErrorHandler, AuthorizationChecker } from './middlewares';
 
 createConnection(<ConnectionOptions> {
     driver: <DriverOptions> config.database,
-    entities: <EntityOptions> [ Album ],
+    autoSchemaSync: config.autoSchemaSync,
+    entities: <EntityOptions> [ Album, AlbumMeta ],
     migrations: [`${__dirname}/migrations/*.ts`],
     cli: { migrationsDir: `${__dirname}/migrations` },
-    autoSchemaSync: config.autoSchemaSync,
 }).then(async (connection: Connection) => {
 
   createKoaServer({
@@ -32,3 +32,4 @@ createConnection(<ConnectionOptions> {
   }).listen(config.API_PORT);
 
 }).catch(error => console.log("Error: ", error));
+

@@ -18,6 +18,7 @@
         "mysql": "^2.13.0",
         "reflect-metadata": "^0.1.10",
         "routing-controllers": "^0.7.0-alpha.14",
+        "typedi": "^0.5.2",
         "typeorm": "0.1.0-alpha.8"
     },
     "devDependencies": {
