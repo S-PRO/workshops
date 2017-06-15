@@ -1,24 +1,24 @@
 version: '3'
 
 services:
-  # data:
-  #   container_name: data
-  #   hostname: data
-  #   image: busybox
-  #   volumes:
-  #     - db_data:/var/lib/mysql
-  #   command: "/bin/true"
+  data:
+    container_name: data
+    hostname: data
+    image: busybox
+    volumes:
+      - db_data:/var/lib/mysql
+    command: "/bin/true"
 
-  # mysql:
-  #   container_name: mysql
-  #   hostname: mysql
-  #   image: mysql:latest
-  #   volumes:
-  #     - db_data:/var/lib/mysql
-  #   restart: always
-  #   env_file: "./docker/environments"
-  #   ports:
-  #     - "3306:3306"
+  mysql:
+    container_name: mysql
+    hostname: mysql
+    image: mysql:latest
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    env_file: "./docker/environments"
+    ports:
+      - "3306:3306"
 
   typeorm-api:
     container_name: typeorm-api
@@ -29,9 +29,9 @@ services:
     env_file: "./docker/environments"
     ports:
       - "3000:3000"
-#     depends_on:
-#       - mysql
+    depends_on:
+      - mysql
 
-# volumes:
-#   db_data:
+volumes:
+  db_data:
   
