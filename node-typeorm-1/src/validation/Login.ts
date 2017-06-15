@@ -7,5 +7,5 @@ export class Login {
 
   @IsNotEmpty()
   @IsString()
-  public password: string;
+  public password: string; 
 }
