@@ -3,9 +3,9 @@ import { IConfig } from './ConfigInterface';
 const {
   API_PORT,
   TYPEORM_DRIVER_TYPE,
-  TYPEORM_HOST,
-  TYPEORM_PORT,
   TYPEORM_AUTO_SCHEMA_SYNC,
+  MYSQL_HOST,
+  MYSQL_PORT,
   MYSQL_DATABASE,
   MYSQL_USER,
   MYSQL_PASSWORD,
@@ -15,8 +15,8 @@ const config: IConfig = {
   API_PORT,
   database: {
     type: TYPEORM_DRIVER_TYPE,
-    host: TYPEORM_HOST,
-    port: TYPEORM_PORT,
+    host: MYSQL_HOST,
+    port: MYSQL_PORT,
     database: MYSQL_DATABASE,
     username: MYSQL_USER,
     password: MYSQL_PASSWORD,

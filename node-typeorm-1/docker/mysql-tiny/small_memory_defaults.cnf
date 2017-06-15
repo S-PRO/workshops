@@ -29,3 +29,8 @@ binlog_stmt_cache_size=4K
 
 #per comments and http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_table_definition_cache
 table_definition_cache=400
+
+#https://www.digitalocean.com/community/questions/mysql-configuration-file-my-cnf-ideal-setup-for-256-and-512mb-on-ubuntu
+performance_schema = OFF
+
+explicit_defaults_for_timestamp = 1
