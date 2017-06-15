@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  data:
+    container_name: data
+    hostname: data
+    image: busybox
+    volumes:
+      - db_data:/var/lib/mysql
+    command: "/bin/true"
+
+  mysql:
+    container_name: mysql
+    hostname: mysql
+    build: ./docker/mysql-tiny/
+    volumes:
+      - db_data:/var/lib/mysql
+    env_file: "./docker/environments"
+    ports:
+      - "3306:3306"
+
+  typeorm-api:
+    container_name: typeorm-api
+    hostname: typeorm-api
+    build: ./
+    volumes:
+      - ./src:/var/www/typeorm-api/src
+    env_file: "./docker/environments"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+
+volumes:
+  db_data:
+  
