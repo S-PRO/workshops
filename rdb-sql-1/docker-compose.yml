@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  
+  ws_mysql:
+    container_name: ws_mysql
+    hostname: ws_mysql
+    build: 
+      context: ./
+      dockerfile: Dockerfile.mysql7
+    volumes:
+      - ws_mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=workshop
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+    ports:
+      - "3307:3306"
+    restart: always
+
+  ws_psql:
+    container_name: ws_psql
+    hostname: ws_psql
+    image: "sameersbn/postgresql:9.6-2"
+    volumes:
+      - ws_psql_data:/var/lib/postgresql/data
+    environment:
+      - DB_USER=root
+      - DB_PASS=""
+      - DB_NAME=root,workshop
+      - PG_TRUST_LOCALNET=true
+    ports:
+      - "5433:5432"
+    restart: always
+
+volumes:
+    ws_mysql_data:
+    ws_psql_data:
