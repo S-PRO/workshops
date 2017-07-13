@@ -14,4 +14,5 @@
 
 ## RDB & SQL:
 
-- [SELECT, JOIN, Indexes](./rdb-sql-1)
+- [SELECTS, JOINS, INDEXES](./rdb-sql-1)
+- [SUB-QUERIES, JOINS, VIRTUAL FIELDS](./rdb-sql-1)
