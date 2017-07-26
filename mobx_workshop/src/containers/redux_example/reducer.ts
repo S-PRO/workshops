@@ -4,7 +4,7 @@ import { _t_action, _t_state } from './types.d';
 
 
 
-export default function exampleReducer(state: _t_state = initialState, action: _t_action) {
+function exampleReducer(state: _t_state = initialState, action: _t_action) {
 
     switch (action.type) {
         case actionTypes.SET_NAME:
@@ -20,3 +20,6 @@ export default function exampleReducer(state: _t_state = initialState, action: _
             return state;
     }
 }
+
+
+export default exampleReducer as any;
