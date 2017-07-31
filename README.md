@@ -8,6 +8,7 @@
 - [NodeJS/TypeScript REST API + TypeORM example](./node-typeorm-1)
 - [React Native with MobX](./mobx_workshop)
 - [Redux-saga](./redux-saga)
+- [React-redux](./react-redux)
 
 ## Docker Containers:
 
