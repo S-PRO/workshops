@@ -21,5 +21,5 @@
 
 ## React Native:
 
-- [1. Basics](./react-native/1. Basics)
-- [2. Unit-testing](./react-native/2. Unit-testing)
+- [1. Basics](./react-native/1.%20Basics)
+- [2. Unit-testing](./react-native/2.%20Unit-testing)
