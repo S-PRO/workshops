@@ -23,3 +23,4 @@
 
 - [1. Basics](./react-native/1.%20Basics)
 - [2. Unit-testing](./react-native/2.%20Unit-testing)
+- [3. Testing redux and mobx](./react-native/3.%20Testing%20redux%20and%20mobx)
