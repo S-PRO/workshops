@@ -3,5 +3,8 @@
 
 # Workshop RDB SQL Part 2
 2 - SUB-QUERIES, JOINS, VIRTUAL FIELDS.docx
+
+# Workshop RDB SQL Part 2
+3 - FULLTEXT SEARCH.docx
   
-@2017 [Eugene Golovan](mailto:egolovan@s-pro.io) at [S-PRO](http://s-pro.io)  
+@2018 [Eugene Golovan](mailto:egolovan@s-pro.io) at [S-PRO](http://s-pro.io)  
